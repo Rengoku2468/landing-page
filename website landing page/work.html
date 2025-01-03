@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Height Vertical Nav Bar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">    <script src="
+    https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="nav-bar">
+    <div class="cart">
+        <div class="dots">
+            <div class="circle">
+                <span class="red box"></span>
+            </div>
+            <div class="circle">
+                <span class="yellow box"></span>
+            </div>
+            <div class="circle">
+                <span class="green box"></span>
+            </div>
+        </div>
+        <div id="profilepic">
+            <img src="IMG-20240920-WA0093.jpg" alt="Profile pic">
+            <div id="name">ADMINISTRATOR<br><b>Kevin</b>
+            </div></div>
+    </div>
+    <ul>
+        <div>
+            <li>
+                <p>
+                    <a href="#" data-section="home">
+                        <i class="fas fa-tachometer-alt"></i> Dashboard
+                    </a>
+                </p>
+            </li>
+        </div>
+        <li class="dropdown">
+            <p>
+                <a href="#" data-section="sites">
+                    <i class="fas fa-sitemap"></i> My Sites 
+                    <span class="dropdown-arrow">&#9662;</span>
+                </a>
+            </p>
+            <div class="dropdown-content">
+                <a href="#"><i class="fas fa-circle-notch"></i> Site 1</a>
+                <a href="#"><i class="fas fa-circle-notch"></i> Site 2</a>
+                <a href="#"><i class="fas fa-circle-notch"></i> Site 3</a>
+            </div>
+        </li>
+        <li>
+            <p>
+                <a href="#" data-section="tasks">
+                    <i class="fas fa-tasks"></i> Tasks
+                </a>
+            </p>
+        </li>
+        <li>
+            <p>
+                <a href="#" data-section="notifications">
+                    <i class="fas fa-bell"></i> Notifications
+                </a>
+            </p>
+        </li>
+        <li>
+            <p>
+                <a href="#" data-section="help">
+                    <i class="fas fa-life-ring"></i> Help Center
+                </a>
+            </p>
+        </li>
+        <li>
+            <p>
+                <a href="#" data-section="contact">
+                    <i class="fas fa-envelope"></i> Contact Us
+                </a>
+            </p>
+        </li>
+        <li id="logout">
+            <p>
+                <a href="#" data-section="logout">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </a>
+            </p>
+        </li>
+    </ul>
+    <div class="card">
+        <p class="card-body" style="font-size:smaller;">
+            <b>Let's Start</b> <br>Creating or adding new tasks couldn't be easier <br>
+            <button id="pro" style="color: white;">Pro Version</button>
+        </p>
+    </div>
+</div>
+<div class="main-content" id="main-content">
+    <!-- Content will be loaded here dynamically -->
+    <div class="stats-container">
+        <div class="stats-header" style="width: 1000px;">
+            <h1>Welcome Back, Kevin</h1>  <i class="fas fa-bell" style="margin-left: 625px;"></i>
+            <div id="profilepic">
+                <img src="IMG-20240920-WA0093.jpg" alt="Profile pic">
+                <div id="name" style="color: black;"><br><b>Kevin</b>
+                </div></div>
+        </div>
+
+        
+        <!-- Overview Cards -->
+        <div class="overview-cards">
+            <div class="overview-card">
+                <h2>89,935 <i class="fas fa-arrow-up" style="font-size: 24px; color: #28a745;"></i>  <br>Total Users </h2>
+                <p> <i class="fas fa-arrow-up" style="font-size: 24px; color: #28a745;"></i>30.2 +1.01% this week</p>
+            </div>
+            <div class="overview-card">
+                <h2>23,283.5<i class="fas fa-chart-line" style="font-size: 24px; color: #17a2b8;"></i><br>Total Sessions</h2>
+                <p> <i class="fas fa-arrow-up" style="font-size: 24px; color: #28a745;"></i>30.2 +1.01% this week</p>
+            </div>
+            <div class="overview-card">
+                <h2>46,827<i class="fas fa-arrow-down" style="font-size: 24px; color: #dc3545;"></i>   <br>Total Users</h2>
+                <p><i class="fas fa-arrow-down" style="font-size: 24px; color: #dc3545;"></i>30.2 +1.01% this week</p>
+            </div>
+            <div class="overview-card">
+                <h2>124,854  <i class="fas fa-shopping-cart" style="font-size: 24px; color: #007bff;"></i><br>Purchases</h2>
+                <p> <i class="fas fa-arrow-up" style="font-size: 24px; color: #28a745;"></i>30.2 +1.01% this week</p>
+            </div>
+        </div>
+
+        <!-- Analytics and Map -->
+         <div id="statistics">
+           <div id="linegraphandpiechart">
+            <div id="line">
+              <canvas id="linegraph" height="200" width="700px">
+              </canvas>
+            </div>
+            <div>
+              <canvas id="piechart" height="200px" width="300px">
+
+              </canvas>
+            </div>
+           </div>
+           <div id="mapandgraph">
+              <div id="map">
+
+              </div>
+              <div id="bar">
+              <canvas id="barchart" height="200px" width="300px">
+
+              </canvas>
+              </div>
+           </div>
+         </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+"></script>
+</body>
+</html>
