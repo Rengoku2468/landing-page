@@ -32,9 +32,11 @@ The page should load instantly, showing the admin welcome or login section.
 
 Folder structure:
 
-index.html
+work.html
 
 style.css
+
+script.js
 
 README.txt
 
